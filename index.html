@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Guide 🦷</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #eef8ff, #ffffff);
+      color: #17324d;
+    }
+
+    .app {
+      max-width: 700px;
+      margin: auto;
+      padding: 25px 18px 40px;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #668096;
+      margin: 8px 0 25px;
+    }
+
+    .tooth {
+      width: 180px;
+      height: 210px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 50% 50% 42% 42%;
+      box-shadow: 0 15px 35px rgba(60,100,130,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+    }
+
+    .chat {
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(50,90,120,.12);
+    }
+
+    .message {
+      background: #eef7ff;
+      border-radius: 18px;
+      padding: 15px;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .question {
+      width: 100%;
+      border: none;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 15px;
+      background: #f2f7fa;
+      color: #17324d;
+      font-size: 15px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .question:hover {
+      background: #e4f2fb;
+    }
+
+    .small {
+      text-align: center;
+      margin-top: 20px;
+      color: #8aa0b0;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="app">
+
+    <div class="logo">
+      🦷 Dental Guide
+    </div>
+
+    <div class="subtitle">
+      Спроси у зуба — он объяснит
+    </div>
+
+    <div class="tooth">
+      🦷
+    </div>
+
+    <div class="chat">
+
+      <div class="message" id="answer">
+        Привет! Я твой Зубик 🦷
+        <br><br>
+        Я помогу разобраться в уходе за зубами.
+        Выбери вопрос ниже!
+      </div>
+
+      <button class="question" onclick="answer('Как правильно чистить зубы?')">
+        🪥 Как правильно чистить зубы?
+      </button>
+
+      <button class="question" onclick="answer('Что такое кариес?')">
+        🦠 Что такое кариес?
+      </button>
+
+      <button class="question" onclick="answer('Как часто нужно чистить зубы?')">
+        ⏰ Как часто нужно чистить зубы?
+      </button>
+
+      <button class="question" onclick="answer('Что можно есть для здоровья зубов?')">
+        🍎 Что есть для здоровья зубов?
+      </button>
+
+      <button class="question" onclick="answer('Зачем нужен стоматолог?')">
+        👩‍⚕️ Зачем ходить к стоматологу?
+      </button>
+
+      <button class="question" onclick="answer('Что делать с брекетами?')">
+        😁 Как ухаживать за брекетами?
+      </button>
+
+    </div>
+
+    <div class="small">
+      Dental Guide • образовательный проект о здоровье полости рта
+    </div>
+
+  </div>
+
+  <script>
+
+    function answer(question) {
+
+      const box = document.getElementById("answer");
+
+      const answers = {
+
+        "Как правильно чистить зубы?":
+        "Чисти зубы 2 раза в день примерно по 2 минуты. Двигай щёткой мягко, очищая внешние, внутренние и жевательные поверхности зубов. Не забывай про язык!",
+
+        "Что такое кариес?":
+        "Кариес — это повреждение твёрдых тканей зуба. Бактерии в зубном налёте используют сахара из пищи и образуют кислоты, которые постепенно разрушают эмаль.",
+
+        "Как часто нужно чистить зубы?":
+        "Обычно зубы рекомендуют чистить утром и вечером — 2 раза в день. Между зубами также важно очищать пространство с помощью подходящих средств.",
+
+        "Что можно есть для здоровья зубов?":
+        "Для здоровья зубов важен разнообразный рацион. Полезно выбирать продукты, содержащие кальций и другие необходимые питательные вещества, а сладкие напитки и частые сладкие перекусы ограничивать.",
+
+        "Зачем нужен стоматолог?":
+        "Стоматолог помогает вовремя заметить проблемы, провести лечение и подобрать профилактику. Даже если ничего не болит, профилактические осмотры помогают сохранить здоровье зубов.",
+
+        "Что делать с брекетами?":
+        "При брекетах особенно важно тщательно очищать зубы и пространство вокруг конструкции. Используй средства, которые рекомендовал стоматолог или ортодонт."
+
+      };
+
+      box.innerHTML =
+        "<b>Ты спросил:</b> " +
+        question +
+        "<br><br>" +
+        answers[question];
+    }
+
+  </script>
+
+</body>
+</html>
